@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+    themes: winter, night;
+}
+
+/* 🚫 Remove DaisyUI background in night mode */
+html[data-theme="night"] body {
+    background-color: transparent !important;
+}
+
+/* 🎥 Video visibility */
+#bgVideo {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease;
+}
+
+html[data-theme="night"] #bgVideo {
+    opacity: 0.35;
+    visibility: visible;
+}
+
+/* 🌙 Navbar behavior */
+html[data-theme="night"] #navbar {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+html[data-theme="night"] #navbar[data-scrolled="true"] {
+    background-color: #050e1d !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+}
