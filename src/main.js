@@ -40,3 +40,6 @@ window.addEventListener("scroll", () => {
     window.scrollY > 50 ? "true" : "false"
   );
 });
+
+
+lucide.replace();
