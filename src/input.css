@@ -58,7 +58,9 @@
 }
 
 @layer base {
-    html {
+    html, body {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
             font-family: var(--font-family);
         }
         
@@ -146,3 +148,43 @@ html[data-theme="night"] #navbar[data-scrolled="true"] {
 
 
 @custom-variant night (&:where([data-theme=night], [data-theme=night] *));
+
+/* Carousel Animation */
+.carousel-track {
+    display: flex;
+    width: max-content;
+    gap: 1.5rem;
+    animation: scroll 15s linear infinite;
+    will-change: transform;
+}
+
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+.carousel-track img {
+    height: 260px;
+    /* ✅ fits About section */
+    width: auto;
+    border-radius: 1.25rem;
+    flex-shrink: 0;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-track img {
+        height: 180px;
+    }
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
