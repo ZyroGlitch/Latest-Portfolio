@@ -110,6 +110,10 @@
             color: transparent;
         }
 
+    .bg-galaxy {
+        background-image: linear-gradient(to right, #928c93, #a279ad, #ae62c7, #b645e3, #ba00ff);
+    }
+
     h2{
         @apply text-4xl text-white;
     }
