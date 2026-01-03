@@ -11,6 +11,30 @@ window.addEventListener("DOMContentLoaded", () => {
   toggle.checked = true;
 
   video.play().catch(() => {});
+
+  // Cache navbar height for layout spacing
+  const setNavbarHeight = () => {
+    if (navbar) {
+      document.documentElement.style.setProperty(
+        "--navbar-height",
+        `${navbar.offsetHeight}px`
+      );
+    }
+  };
+  setNavbarHeight();
+  window.addEventListener("resize", setNavbarHeight);
+
+  // Close drawer when clicking links or the X button
+  const drawerToggle = document.getElementById("my-drawer-2");
+  const drawerLinks = document.querySelectorAll(".drawer-side a");
+  const drawerClose = document.getElementById("drawer-close");
+
+  const closeDrawer = () => {
+    if (drawerToggle) drawerToggle.checked = false;
+  };
+
+  drawerLinks.forEach((link) => link.addEventListener("click", closeDrawer));
+  if (drawerClose) drawerClose.addEventListener("click", closeDrawer);
 });
 
 /* =========================
