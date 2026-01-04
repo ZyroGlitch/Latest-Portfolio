@@ -62,6 +62,9 @@
             scroll-behavior: smooth;
             overflow-x: hidden;
             font-family: var(--font-family);
+
+            -webkit-hyphens: auto;
+            hyphens: auto;
         }
         
     h1 {
@@ -98,6 +101,10 @@
         font-size: var(--font-size-h6);
         line-height: var(--line-height-h6);
         font-weight: var(--font-weight-h6);
+    }
+
+    p {
+        text-wrap: pretty;
     }
 }
 

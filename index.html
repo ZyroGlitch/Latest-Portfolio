@@ -1,15 +1,19 @@
 <!doctype html>
-<html data-theme="night">
+<html lang="en" data-theme="night">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
-
     <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
   </head>
-  <body class="m-0 min-h-screen p-0 transition-colors duration-500">
-    <!-- Galaxy Background - Hidden by default, shown only in dark mode -->
-    <div id="home" class="relative flex h-full w-full flex-col items-center">
+
+  <body
+    class="m-0 min-h-screen overflow-x-hidden p-0 transition-colors duration-500"
+  >
+    <div
+      id="home"
+      class="relative flex h-full w-full flex-col items-center overflow-x-hidden"
+    >
       <video
         id="bgVideo"
         class="pointer-events-none fixed inset-0 -z-10 h-full w-full object-cover"
@@ -20,40 +24,15 @@
         playsinline
       ></video>
 
-      <!-- Navbar Section -->
       <div class="drawer">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content flex flex-col">
-          <!-- Humbuger button hide for large screens -->
-          <!-- <div class="flex-none lg:hidden">
-            <label
-              for="my-drawer-2"
-              aria-label="open sidebar"
-              class="btn btn-square btn-ghost"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                class="inline-block h-6 w-6 stroke-current"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </label>
-          </div> -->
 
-          <!-- Larger Screen Content -->
+        <div class="drawer-content flex flex-col">
           <nav
             id="navbar"
             data-scrolled="false"
-            class="navbar bg-base-100 data-[scrolled=true]:bg-base-100 fixed top-0 left-0 right-0 w-full z-50 gap-4 transition-all duration-500 data-[scrolled=true]:shadow-xl sm:grid sm:grid-cols-12 sm:px-24 flex justify-between"
+            class="navbar bg-base-100 data-[scrolled=true]:bg-base-100 fixed top-0 left-0 right-0 z-50 w-full gap-4 px-4 transition-all duration-500 data-[scrolled=true]:shadow-xl flex justify-between sm:grid sm:grid-cols-12 sm:px-24"
           >
-            <!-- First Div is just temporary holder of hamburger & title -->
             <div class="flex gap-2 items-center sm:col-span-3">
               <div class="flex-none lg:hidden">
                 <label
@@ -78,47 +57,44 @@
               </div>
 
               <div class="sm:col-span-3 flex">
-                <a class="btn btn-ghost text-xl">My Portfolio</a>
+                <a href="#home" class="btn btn-ghost text-xl text-galaxy p-0">
+                  <img
+                    src="images/bug.svg"
+                    alt="logo"
+                    class="hidden sm:block sm:mr-2"
+                  />
+                  My Portfolio
+                </a>
               </div>
             </div>
 
-            <!-- Hide Navbar Links on Small Screens -->
             <div
               class="sm:col-span-6 flex-none justify-center space-x-4 hidden sm:flex sm:block"
             >
               <ul class="menu menu-horizontal px-1">
                 <li><a href="#home">Home</a></li>
               </ul>
-
               <ul class="menu menu-horizontal px-1">
                 <li><a href="#skills">Skills</a></li>
               </ul>
-
               <ul class="menu menu-horizontal px-1">
                 <li><a href="#about">About</a></li>
               </ul>
-
               <ul class="menu menu-horizontal px-1">
                 <li><a href="#experiences">Experiences</a></li>
               </ul>
-
               <ul class="menu menu-horizontal px-1">
                 <li><a href="#projects">Projects</a></li>
               </ul>
-
               <ul class="menu menu-horizontal px-1">
                 <li><a href="#certifications">Certifications</a></li>
               </ul>
             </div>
 
-            <!-- Light / Dark Mode Toggle -->
             <div class="sm:col-span-3 flex justify-end">
-              <!-- Dark Mode Toggle -->
               <label class="swap swap-rotate">
-                <!-- this hidden checkbox controls the state -->
                 <input id="themeToggle" type="checkbox" />
 
-                <!-- sun icon -->
                 <svg
                   class="swap-off h-6 w-6 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +105,6 @@
                   />
                 </svg>
 
-                <!-- moon icon -->
                 <svg
                   class="swap-on h-6 w-6 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +118,7 @@
             </div>
           </nav>
         </div>
-        <!-- Sidebar Content -->
+
         <div class="drawer-side z-[60]">
           <label
             for="my-drawer-2"
@@ -151,7 +126,7 @@
             class="drawer-overlay"
           ></label>
 
-          <ul class="menu bg-base-200 min-h-full w-full p-6">
+          <ul class="menu bg-base-200 min-h-full w-full p-6 overflow-x-hidden">
             <div class="flex justify-between items-center px-2">
               <div class="flex items-center gap-2">
                 <img src="images/bug.svg" alt="logo" />
@@ -184,7 +159,6 @@
 
             <hr class="my-4 bg-galaxy" />
 
-            <!-- Sidebar content here -->
             <div class="text-lg">
               <li class="hover:text-purple-400"><a href="#home">Home</a></li>
               <li class="hover:text-purple-400">
@@ -208,23 +182,39 @@
       <!-- Home Section -->
       <section
         id="home"
-        class="flex min-h-[calc(100vh-var(--navbar-height))] flex-col items-center justify-center"
+        class="flex min-h-[calc(100vh-var(--navbar-height))] w-full flex-col items-center justify-center px-4 text-center"
       >
-        <h2>Hello, I'm</h2>
-        <h1 class="mt-2 text-center text-6xl font-bold text-white">
+        <h2 class="text-[clamp(1.5rem,4vw,2.5rem)] leading-tight">
+          Hello, I'm
+        </h2>
+
+        <h1
+          class="mt-2 text-[clamp(2.4rem,9vw,4rem)] font-bold leading-[1.05] break-words text-white"
+        >
           JOHN FORD BULIAG
         </h1>
-        <h2 class="text-galaxy mt-2 text-3xl">Aspiring Azure Data Engineer</h2>
 
-        <div class="text-center">
-          <hr class="mx-auto my-6 h-0.5 w-[300px] border-0 bg-slate-600" />
-          <h6 class="text-galaxy text-2xl">Connect with me</h6>
+        <h2
+          class="text-galaxy mt-2 text-[clamp(1.1rem,4.5vw,1.875rem)] leading-snug break-words"
+        >
+          Aspiring Azure Data Engineer
+        </h2>
+
+        <div class="mt-2 w-full">
+          <hr
+            class="mx-auto my-6 h-0.5 w-full max-w-[300px] border-0 bg-slate-600"
+          />
+          <h6 class="text-galaxy text-[clamp(1rem,4vw,1.5rem)]">
+            Connect with me
+          </h6>
         </div>
 
-        <div class="mt-2 flex space-x-4">
+        <div
+          class="grid grid-cols-2 gap-4 mt-6 sm:mt-2 sm:flex sm:flex-wrap sm:justify-center sm:gap-3"
+        >
           <a
             href="#"
-            class="btn btn-md mt-6 text-white ring-1 ring-purple-500 hover:bg-purple-700 hover:shadow hover:ring-0 hover:shadow-purple-700"
+            class="btn btn-md sm:mt-6 text-white ring-1 ring-purple-500 hover:bg-purple-700 hover:shadow hover:ring-0 hover:shadow-purple-700"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -246,7 +236,7 @@
 
           <a
             href="#"
-            class="btn btn-md mt-6 text-white ring-1 ring-purple-500 hover:bg-purple-700 hover:shadow hover:ring-0 hover:shadow-purple-700"
+            class="btn btn-md sm:mt-6 text-white ring-1 ring-purple-500 hover:bg-purple-700 hover:shadow hover:ring-0 hover:shadow-purple-700"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -267,7 +257,7 @@
 
           <a
             href="https://www.linkedin.com/in/john-ford-buliag-444ba5313/"
-            class="btn btn-md mt-6 text-white ring-1 ring-purple-500 hover:bg-purple-700 hover:shadow hover:ring-0 hover:shadow-purple-700"
+            class="btn btn-md sm:mt-6 text-white ring-1 ring-purple-500 hover:bg-purple-700 hover:shadow hover:ring-0 hover:shadow-purple-700"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -292,7 +282,7 @@
           <a
             href="https://github.com/ZyroGlitch"
             target="_blank"
-            class="btn btn-md mt-6 text-white ring-1 ring-purple-500 hover:bg-purple-700 hover:shadow hover:ring-0 hover:shadow-purple-700"
+            class="btn btn-md sm:mt-6 text-white ring-1 ring-purple-500 hover:bg-purple-700 hover:shadow hover:ring-0 hover:shadow-purple-700"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -624,26 +614,26 @@
       </section>
 
       <!-- About Section -->
-      <section id="about" class="h-full p-8 sm:p-24">
-        <!-- Section Title -->
+      <!-- About Section -->
+      <section
+        id="about"
+        class="h-full w-full px-4 py-10 sm:px-24 sm:py-24 overflow-x-hidden"
+      >
         <h1
-          class="my-10 text-center text-5xl font-bold text-galaxy border-y-2 border-purple-700 py-4"
+          class="my-10 text-center text-[clamp(2rem,6vw,3rem)] font-bold text-galaxy border-y-2 border-purple-700 py-4"
         >
           About Me
         </h1>
 
-        <!-- Content Wrapper -->
-        <div class="mx-auto flex max-w-6xl flex-col gap-10">
-          <!-- Carousel Card -->
-          <div class="relative overflow-hidden rounded-2xl backdrop-blur-md">
+        <div class="mx-auto w-full max-w-6xl flex flex-col gap-10">
+          <div
+            class="relative w-full overflow-hidden rounded-2xl backdrop-blur-md"
+          >
             <div class="carousel-track">
-              <!-- SET A -->
               <img src="images/img1.jpg" />
               <img src="images/img2.jpg" />
               <img src="images/img3.jpg" />
               <img src="images/img6.jpg" />
-
-              <!-- SET B -->
               <img src="images/img1.jpg" />
               <img src="images/img2.jpg" />
               <img src="images/img3.jpg" />
@@ -651,13 +641,12 @@
             </div>
           </div>
 
-          <!-- About Text Card -->
           <div class="grid gap-4 sm:grid-cols-2">
             <div
               class="flex items-center rounded-lg border border-white/20 bg-base-200/20 p-4 shadow-lg"
             >
               <div
-                class="bg-purple-800 rounded-lg w-[50px] h-[50px] flex items-center justify-center mr-6"
+                class="bg-purple-800 rounded-lg w-[50px] h-[50px] flex items-center justify-center mr-4 sm:mr-6 flex-shrink-0"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -676,9 +665,9 @@
                 </svg>
               </div>
 
-              <div class="">
+              <div class="min-w-0">
                 <h6 class="text-sm tracking-wide text-gray-400">FULLNAME</h6>
-                <p class="text-xl font-bold text-white">
+                <p class="text-xl font-bold text-white break-words">
                   John Ford Centino Buliag
                 </p>
               </div>
@@ -688,7 +677,7 @@
               class="flex items-center rounded-lg border border-white/20 bg-base-200/20 p-4 shadow-lg"
             >
               <div
-                class="bg-purple-800 rounded-lg w-[50px] h-[50px] flex items-center justify-center mr-6"
+                class="bg-purple-800 rounded-lg w-[50px] h-[50px] flex items-center justify-center mr-4 sm:mr-6 flex-shrink-0"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -710,19 +699,97 @@
                 </svg>
               </div>
 
-              <div>
+              <div class="min-w-0">
                 <h6 class="text-sm tracking-wide text-gray-400">EDUCATION</h6>
-                <p class="text-xl font-semibold text-white">
+
+                <p
+                  class="text-[clamp(1rem,2.2vw,1.25rem)] font-semibold text-white break-words"
+                >
                   Bachelor of Science in Computer Science
                 </p>
-                <p class="text-base text-gray-300">University of Mindanao</p>
+
+                <p
+                  class="text-[clamp(0.875rem,1.6vw,1rem)] text-gray-300 break-words"
+                >
+                  University of Mindanao
+                </p>
               </div>
             </div>
 
             <div
-              class="rounded-lg border border-white/20 bg-base-200/20 p-4 shadow-lg col-span-2"
+              class="flex items-center rounded-lg border border-white/20 bg-base-200/20 p-4 shadow-lg"
             >
-              <p class="text-lg text-justify">
+              <div
+                class="bg-purple-800 rounded-lg w-[50px] h-[50px] flex items-center justify-center mr-4 sm:mr-6 flex-shrink-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-user-round-icon lucide-user-round"
+                >
+                  <circle cx="12" cy="8" r="5" />
+                  <path d="M20 21a8 8 0 0 0-16 0" />
+                </svg>
+              </div>
+
+              <div class="min-w-0">
+                <h6 class="text-sm tracking-wide text-gray-400">AGE</h6>
+                <p class="text-xl font-bold text-white break-words">
+                  24 years old
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center rounded-lg border border-white/20 bg-base-200/20 p-4 shadow-lg"
+            >
+              <div
+                class="bg-purple-800 rounded-lg w-[50px] h-[50px] flex items-center justify-center mr-4 sm:mr-6 flex-shrink-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-map-pin-house-icon lucide-map-pin-house"
+                >
+                  <path
+                    d="M15 22a1 1 0 0 1-1-1v-4a1 1 0 0 1 .445-.832l3-2a1 1 0 0 1 1.11 0l3 2A1 1 0 0 1 22 17v4a1 1 0 0 1-1 1z"
+                  />
+                  <path
+                    d="M18 10a8 8 0 0 0-16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 .601.2"
+                  />
+                  <path d="M18 22v-3" />
+                  <circle cx="10" cy="10" r="3" />
+                </svg>
+              </div>
+
+              <div class="min-w-0">
+                <h6 class="text-sm tracking-wide text-gray-400">LOCATION</h6>
+                <p class="text-xl font-bold text-white break-words">
+                  Isulan Sultan Kudarat
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="rounded-lg border border-white/20 bg-base-200/20 p-4 shadow-lg sm:col-span-2"
+            >
+              <p
+                class="text-[clamp(0.95rem,2.5vw,1.125rem)] leading-relaxed text-justify break-words hyphens-auto"
+              >
                 During my college years, I built a strong foundation in computer
                 science and explored multiple fields, including web development,
                 application development, and UI/UX design. Through mentorship
@@ -743,7 +810,6 @@
         </div>
       </section>
 
-      <!-- Experiences Section -->
       <section id="experiences" class="h-full w-full p-8 sm:p-24">
         <h1
           class="my-10 text-center text-5xl font-bold text-galaxy border-y-2 border-purple-700 py-4"
@@ -773,6 +839,7 @@
                   <path d="m9 12 2 2 4-4" />
                 </svg>
               </span>
+
               <span
                 class="absolute left-4 top-9 bottom-0 w-[2px] bg-purple-500"
               ></span>
@@ -780,16 +847,20 @@
               <div
                 class="rounded-lg border border-white/20 bg-base-200/20 p-4 shadow-lg hover:shadow-md hover:shadow-purple-500/50 hover:transition-all hover:duration-300 hover:backdrop-blur-lg"
               >
-                <div class="flex justify-between items-baseline">
+                <div
+                  class="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-baseline"
+                >
                   <div>
-                    <h6 class="text-xl text-white">OJT/Internship Program</h6>
-                    <p class="text-md text-slate-400 font-bold">
+                    <h6 class="text-xl text-white break-words">
+                      OJT/Internship Program
+                    </h6>
+                    <p class="text-md text-slate-400 font-bold break-words">
                       Advanced Infinit Solution.
                     </p>
                   </div>
 
                   <p
-                    class="text-lg text-white font-bold flex gap-x-2 items-center"
+                    class="text-lg text-white font-bold flex gap-x-2 items-center break-words"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -814,12 +885,11 @@
                       <path d="M12 18h.01" />
                       <path d="M16 18h.01" />
                     </svg>
-
                     <span>Year 2024 - 2025</span>
                   </p>
                 </div>
 
-                <p class="text-[16px] text-justify mt-4">
+                <p class="text-[16px] text-justify mt-4 break-words">
                   During our OJT internship at Advanced Infinit Solution, we
                   developed a frontend website for the static presentation of
                   I-LINK school information. We were also tasked with building a
@@ -850,7 +920,6 @@
                     />
                     <circle cx="12" cy="8" r="6" />
                   </svg>
-
                   <span>Certificate of Completion</span>
                 </a>
               </div>
@@ -876,6 +945,7 @@
                   <path d="m9 12 2 2 4-4" />
                 </svg>
               </span>
+
               <span
                 class="absolute left-4 top-9 bottom-0 w-[2px] bg-purple-500"
               ></span>
@@ -883,16 +953,20 @@
               <div
                 class="rounded-lg border border-white/20 bg-base-200/20 p-4 shadow-lg hover:shadow-md hover:shadow-purple-500/50 hover:transition-all hover:duration-300 hover:backdrop-blur-lg"
               >
-                <div class="flex justify-between items-baseline">
+                <div
+                  class="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-baseline"
+                >
                   <div>
-                    <h6 class="text-xl text-white">Academic Mentor</h6>
-                    <p class="text-md text-slate-400 font-bold">
+                    <h6 class="text-xl text-white break-words">
+                      Academic Mentor
+                    </h6>
+                    <p class="text-md text-slate-400 font-bold break-words">
                       CCE Skills Clinic, University of Mindanao.
                     </p>
                   </div>
 
                   <p
-                    class="text-lg text-white font-bold flex gap-x-2 items-center"
+                    class="text-lg text-white font-bold flex gap-x-2 items-center break-words"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -917,12 +991,11 @@
                       <path d="M12 18h.01" />
                       <path d="M16 18h.01" />
                     </svg>
-
                     <span>Year 2023 - 2024</span>
                   </p>
                 </div>
 
-                <p class="text-[16px] text-justify mt-4">
+                <p class="text-[16px] text-justify mt-4 break-words">
                   Academic mentor specializing in Java, Web Development, and
                   Database concepts, helping fellow students strengthen their
                   programming skills.
@@ -950,7 +1023,6 @@
                     />
                     <circle cx="12" cy="8" r="6" />
                   </svg>
-
                   <span>Certificate of Completion</span>
                 </a>
               </div>
@@ -976,6 +1048,7 @@
                   <path d="m9 12 2 2 4-4" />
                 </svg>
               </span>
+
               <span
                 class="absolute left-4 top-9 bottom-0 w-[2px] bg-purple-500"
               ></span>
@@ -983,16 +1056,18 @@
               <div
                 class="rounded-lg border border-white/20 bg-base-200/20 p-4 shadow-lg hover:shadow-md hover:shadow-purple-500/50 hover:transition-all hover:duration-300 hover:backdrop-blur-lg"
               >
-                <div class="flex justify-between items-baseline">
+                <div
+                  class="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-baseline"
+                >
                   <div>
-                    <h6 class="text-xl text-white">Freelancer</h6>
-                    <p class="text-md text-slate-400 font-bold">
+                    <h6 class="text-xl text-white break-words">Freelancer</h6>
+                    <p class="text-md text-slate-400 font-bold break-words">
                       Work from Home.
                     </p>
                   </div>
 
                   <p
-                    class="text-lg text-white font-bold flex gap-x-2 items-center"
+                    class="text-lg text-white font-bold flex gap-x-2 items-center break-words"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1017,46 +1092,20 @@
                       <path d="M12 18h.01" />
                       <path d="M16 18h.01" />
                     </svg>
-
                     <span>Year 2021 - 2023</span>
                   </p>
                 </div>
 
-                <p class="text-[16px] text-justify mt-4">
+                <p class="text-[16px] text-justify mt-4 break-words">
                   I provide teaching and project assistance to students who are
                   struggling with programming.
                 </p>
-
-                <button
-                  class="btn border-1 border-purple-600 font-normal mt-6 text-white hover:border-none hover:bg-purple-700 hover:shadow hover:shadow-purple-700"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-award-icon lucide-award"
-                  >
-                    <path
-                      d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"
-                    />
-                    <circle cx="12" cy="8" r="6" />
-                  </svg>
-
-                  <span>Certificate of Completion</span>
-                </button>
               </div>
             </li>
           </ul>
         </div>
       </section>
 
-      <!-- Projects Section -->
       <section id="projects" class="h-full w-full p-8 sm:p-24">
         <h1
           class="my-10 text-center text-5xl font-bold text-galaxy border-y-2 border-purple-700 py-4"
@@ -1065,7 +1114,6 @@
         </h1>
 
         <div class="grid gap-6 sm:grid-cols-3">
-          <!-- Project #1 -->
           <div
             class="card bg-base-100 rounded-lg shadow-lg hover:shadow-sm hover:scale-102 hover:transition-all hover:duration-300"
           >
@@ -1075,12 +1123,14 @@
               <img
                 src="images/projects/project1.jpg"
                 alt="image"
-                class="h-full object-cover"
+                class="h-full object-cover w-full"
               />
             </figure>
             <div class="card-body">
-              <h2 class="text-2xl text-white">Harmonics</h2>
-              <p class="text-[16px] text-justify">
+              <h2 class="text-2xl text-white break-words">Harmonics</h2>
+              <p
+                class="text-[16px] leading-relaxed break-words hyphens-auto [text-align:justify] [text-justify:inter-word]"
+              >
                 is a powerful eCommerce platform with built-in inventory, sales,
                 and employee account management features.
               </p>
@@ -1088,30 +1138,25 @@
               <div class="grid gap-x-4 gap-y-2 grid-cols-2 mt-4">
                 <span
                   class="text-center rounded-lg border border-white/20 bg-base-200/20 p-2 shadow-lg hover:shadow-sm hover:shadow-purple-500/50 hover:transition-all hover:duration-300"
+                  >ReactJS</span
                 >
-                  ReactJS
-                </span>
-
                 <span
                   class="text-center rounded-lg border border-white/20 bg-base-200/20 p-2 shadow-lg hover:shadow-sm hover:shadow-purple-500/50 hover:transition-all hover:duration-300"
+                  >Laravel</span
                 >
-                  Laravel
-                </span>
-
                 <span
                   class="text-center rounded-lg border border-white/20 bg-base-200/20 p-2 shadow-lg hover:shadow-sm hover:shadow-purple-500/50 hover:transition-all hover:duration-300"
+                  >Bootstrap</span
                 >
-                  Bootstrap
-                </span>
-
                 <span
                   class="text-center rounded-lg border border-white/20 bg-base-200/20 p-2 shadow-lg hover:shadow-sm hover:shadow-purple-500/50 hover:transition-all hover:duration-300"
+                  >InertiaJS</span
                 >
-                  InertiaJS
-                </span>
               </div>
 
-              <div class="flex justify-between items-center mt-4">
+              <div
+                class="flex gap-2 sm:flex-row sm:justify-between sm:items-center mt-4"
+              >
                 <p
                   class="flex items-center gap-x-2 text-purple-400 font-semibold"
                 >
@@ -1134,6 +1179,7 @@
                   </svg>
                   Website
                 </p>
+
                 <a
                   href="https://github.com/ZyroGlitch/Harmonics-Ecommerce-System.git"
                   target="_blank"
@@ -1156,14 +1202,12 @@
                     />
                     <path d="M9 18c-4.51 2-5-2-7-2" />
                   </svg>
-
                   Repository
                 </a>
               </div>
             </div>
           </div>
 
-          <!-- Project #2 -->
           <div
             class="card bg-base-100 rounded-lg shadow-lg hover:shadow-sm hover:scale-102 hover:transition-all hover:duration-300"
           >
@@ -1177,8 +1221,10 @@
               />
             </figure>
             <div class="card-body">
-              <h2 class="text-2xl text-white">Tungal's Flower Shop</h2>
-              <p class="text-[16px] text-justify">
+              <h2 class="text-2xl text-white break-words">
+                Tungal's Flower Shop
+              </h2>
+              <p class="text-[16px] text-justify break-words">
                 is a POS system with built-in inventory, sales, and employee
                 account management for walk-in flower orders.
               </p>
@@ -1186,30 +1232,25 @@
               <div class="grid gap-x-4 gap-y-2 grid-cols-2 mt-4">
                 <span
                   class="text-center rounded-lg border border-white/20 bg-base-200/20 p-2 shadow-lg hover:shadow-sm hover:shadow-purple-500/50 hover:transition-all hover:duration-300"
+                  >ReactJS</span
                 >
-                  ReactJS
-                </span>
-
                 <span
                   class="text-center rounded-lg border border-white/20 bg-base-200/20 p-2 shadow-lg hover:shadow-sm hover:shadow-purple-500/50 hover:transition-all hover:duration-300"
+                  >Laravel</span
                 >
-                  Laravel
-                </span>
-
                 <span
                   class="text-center rounded-lg border border-white/20 bg-base-200/20 p-2 shadow-lg hover:shadow-sm hover:shadow-purple-500/50 hover:transition-all hover:duration-300"
+                  >Bootstrap</span
                 >
-                  Bootstrap
-                </span>
-
                 <span
                   class="text-center rounded-lg border border-white/20 bg-base-200/20 p-2 shadow-lg hover:shadow-sm hover:shadow-purple-500/50 hover:transition-all hover:duration-300"
+                  >InertiaJS</span
                 >
-                  InertiaJS
-                </span>
               </div>
 
-              <div class="flex justify-between items-center mt-4">
+              <div
+                class="flex gap-2 sm:flex-row sm:justify-between sm:items-center mt-4"
+              >
                 <p
                   class="flex items-center gap-x-2 text-purple-400 font-semibold"
                 >
@@ -1232,6 +1273,7 @@
                   </svg>
                   Website
                 </p>
+
                 <a
                   href="https://github.com/ZyroGlitch/EverBloom-POS-System.git"
                   target="_blank"
@@ -1254,14 +1296,12 @@
                     />
                     <path d="M9 18c-4.51 2-5-2-7-2" />
                   </svg>
-
                   Repository
                 </a>
               </div>
             </div>
           </div>
 
-          <!-- Project #3 -->
           <div
             class="card bg-base-100 rounded-lg shadow-lg hover:shadow-sm hover:scale-102 hover:transition-all hover:duration-300"
           >
@@ -1275,8 +1315,8 @@
               />
             </figure>
             <div class="card-body">
-              <h2 class="text-2xl text-white">Komyut</h2>
-              <p class="text-[16px] text-justify">
+              <h2 class="text-2xl text-white break-words">Komyut</h2>
+              <p class="text-[16px] text-justify break-words">
                 A navigation app designed to guide newcomers in Davao City by
                 providing jeepney routes, landmark directions, and real-time
                 mapping support using Google Maps services.
@@ -1285,12 +1325,13 @@
               <div class="grid gap-x-4 gap-y-2 grid-cols-2 mt-4">
                 <span
                   class="text-center rounded-lg border border-white/20 bg-base-200/20 p-2 shadow-lg hover:shadow-sm hover:shadow-purple-500/50 hover:transition-all hover:duration-300"
+                  >Flutter</span
                 >
-                  Flutter
-                </span>
               </div>
 
-              <div class="flex justify-between items-center mt-4">
+              <div
+                class="flex gap-2 sm:flex-row sm:justify-between sm:items-center mt-4"
+              >
                 <p
                   class="flex items-center gap-x-2 text-purple-400 font-semibold"
                 >
@@ -1311,6 +1352,7 @@
                   </svg>
                   Mobile Application
                 </p>
+
                 <a
                   href="https://github.com/ZyroGlitch/KOMYUT.git"
                   target="_blank"
@@ -1333,14 +1375,12 @@
                     />
                     <path d="M9 18c-4.51 2-5-2-7-2" />
                   </svg>
-
                   Repository
                 </a>
               </div>
             </div>
           </div>
 
-          <!-- Project #4 -->
           <div
             class="card bg-base-100 rounded-lg shadow-lg hover:shadow-sm hover:scale-102 hover:transition-all hover:duration-300"
           >
@@ -1354,8 +1394,8 @@
               />
             </figure>
             <div class="card-body">
-              <h2 class="text-2xl text-white">Expense Tracker</h2>
-              <p class="text-[16px] text-justify">
+              <h2 class="text-2xl text-white break-words">Expense Tracker</h2>
+              <p class="text-[16px] text-justify break-words">
                 A mobile expense tracker with a connected web admin panel for
                 monitoring transactions, user activity, and financial trends in
                 real time.
@@ -1364,30 +1404,25 @@
               <div class="grid gap-x-4 gap-y-2 grid-cols-2 mt-4">
                 <span
                   class="text-center rounded-lg border border-white/20 bg-base-200/20 p-2 shadow-lg hover:shadow-sm hover:shadow-purple-500/50 hover:transition-all hover:duration-300"
+                  >Flutter</span
                 >
-                  Flutter
-                </span>
-
                 <span
                   class="text-center rounded-lg border border-white/20 bg-base-200/20 p-2 shadow-lg hover:shadow-sm hover:shadow-purple-500/50 hover:transition-all hover:duration-300"
+                  >Firebase</span
                 >
-                  Firebase
-                </span>
-
                 <span
                   class="text-center rounded-lg border border-white/20 bg-base-200/20 p-2 shadow-lg hover:shadow-sm hover:shadow-purple-500/50 hover:transition-all hover:duration-300"
+                  >Laravel</span
                 >
-                  Laravel
-                </span>
-
                 <span
                   class="text-center rounded-lg border border-white/20 bg-base-200/20 p-2 shadow-lg hover:shadow-sm hover:shadow-purple-500/50 hover:transition-all hover:duration-300"
+                  >Bootstrap</span
                 >
-                  Bootstrap
-                </span>
               </div>
 
-              <div class="flex justify-between items-center mt-4">
+              <div
+                class="flex gap-2 sm:flex-row sm:justify-between sm:items-center mt-4"
+              >
                 <p
                   class="flex items-center gap-x-2 text-purple-400 font-semibold"
                 >
@@ -1408,6 +1443,7 @@
                   </svg>
                   Mobile Application
                 </p>
+
                 <a
                   href="https://github.com/ZyroGlitch/expense_tracking_app.git"
                   target="_blank"
@@ -1430,14 +1466,12 @@
                     />
                     <path d="M9 18c-4.51 2-5-2-7-2" />
                   </svg>
-
                   Repository
                 </a>
               </div>
             </div>
           </div>
 
-          <!-- Project #5 -->
           <div
             class="card bg-base-100 rounded-lg shadow-lg hover:shadow-sm hover:scale-102 hover:transition-all hover:duration-300"
           >
@@ -1451,8 +1485,10 @@
               />
             </figure>
             <div class="card-body">
-              <h2 class="text-2xl text-white">Kargadala</h2>
-              <p class="text-[16px] text-justify">
+              <h2 class="text-2xl text-white break-words">Kargadala</h2>
+              <p
+                class="text-[16px] leading-relaxed break-words hyphens-auto [text-align:justify] [text-justify:inter-word]"
+              >
                 An all-in-one lifestyle app for booking rides, sending packages,
                 paying bills, transferring money, ordering online, and gifting
                 with Kargadala-exclusive gift cards.
@@ -1461,12 +1497,13 @@
               <div class="grid gap-x-4 gap-y-2 grid-cols-2 mt-4">
                 <span
                   class="text-center rounded-lg border border-white/20 bg-base-200/20 p-2 shadow-lg hover:shadow-sm hover:shadow-purple-500/50 hover:transition-all hover:duration-300"
+                  >Flutter</span
                 >
-                  Flutter
-                </span>
               </div>
 
-              <div class="flex justify-between items-center mt-4">
+              <div
+                class="flex gap-2 sm:flex-row sm:justify-between sm:items-center mt-4"
+              >
                 <p
                   class="flex items-center gap-x-2 text-purple-400 font-semibold"
                 >
@@ -1487,6 +1524,7 @@
                   </svg>
                   Mobile Application
                 </p>
+
                 <a
                   href="https://github.com/ZyroGlitch/KargaDala.git"
                   target="_blank"
@@ -1509,14 +1547,12 @@
                     />
                     <path d="M9 18c-4.51 2-5-2-7-2" />
                   </svg>
-
                   Repository
                 </a>
               </div>
             </div>
           </div>
 
-          <!-- Project #6 -->
           <div
             class="card bg-base-100 rounded-lg shadow-lg hover:shadow-sm hover:scale-102 hover:transition-all hover:duration-300"
           >
@@ -1530,8 +1566,8 @@
               />
             </figure>
             <div class="card-body">
-              <h2 class="text-2xl text-white">Studd Budd</h2>
-              <p class="text-[16px] text-justify">
+              <h2 class="text-2xl text-white break-words">Studd Budd</h2>
+              <p class="text-[16px] text-justify break-words">
                 A study companion app designed to help students build
                 discipline, stay focused, and manage study sessions effectively
                 through guided routines and productivity tools.
@@ -1540,12 +1576,13 @@
               <div class="grid gap-x-4 gap-y-2 grid-cols-2 mt-4">
                 <span
                   class="text-center rounded-lg border border-white/20 bg-base-200/20 p-2 shadow-lg hover:shadow-sm hover:shadow-purple-500/50 hover:transition-all hover:duration-300"
+                  >Flutter</span
                 >
-                  Flutter
-                </span>
               </div>
 
-              <div class="flex justify-between items-center mt-4">
+              <div
+                class="flex gap-2 sm:flex-row sm:justify-between sm:items-center mt-4"
+              >
                 <p
                   class="flex items-center gap-x-2 text-purple-400 font-semibold"
                 >
@@ -1566,6 +1603,7 @@
                   </svg>
                   Mobile Application
                 </p>
+
                 <a
                   href="https://github.com/ZyroGlitch/Studd-Budd.git"
                   target="_blank"
@@ -1588,14 +1626,12 @@
                     />
                     <path d="M9 18c-4.51 2-5-2-7-2" />
                   </svg>
-
                   Repository
                 </a>
               </div>
             </div>
           </div>
 
-          <!-- Project #7 -->
           <div
             class="card bg-base-100 rounded-lg shadow-lg hover:shadow-sm hover:scale-102 hover:transition-all hover:duration-300"
           >
@@ -1609,8 +1645,8 @@
               />
             </figure>
             <div class="card-body">
-              <h2 class="text-2xl text-white">FlashBack</h2>
-              <p class="text-[16px] text-justify">
+              <h2 class="text-2xl text-white break-words">FlashBack</h2>
+              <p class="text-[16px] text-justify break-words">
                 A photo memory app for saving, organizing, and securing your
                 past and recent pictures swipe to delete or store in a private
                 vault, and unlock full features with a premium subscription.
@@ -1619,12 +1655,13 @@
               <div class="grid gap-x-4 gap-y-2 grid-cols-2 mt-4">
                 <span
                   class="text-center rounded-lg border border-white/20 bg-base-200/20 p-2 shadow-lg hover:shadow-sm hover:shadow-purple-500/50 hover:transition-all hover:duration-300"
+                  >Flutter</span
                 >
-                  Flutter
-                </span>
               </div>
 
-              <div class="flex justify-between items-center mt-4">
+              <div
+                class="flex gap-2 sm:flex-row sm:justify-between sm:items-center mt-4"
+              >
                 <p
                   class="flex items-center gap-x-2 text-purple-400 font-semibold"
                 >
@@ -1645,6 +1682,7 @@
                   </svg>
                   Mobile Application
                 </p>
+
                 <a
                   href="https://github.com/ZyroGlitch/FlashBack.git"
                   target="_blank"
@@ -1667,7 +1705,6 @@
                     />
                     <path d="M9 18c-4.51 2-5-2-7-2" />
                   </svg>
-
                   Repository
                 </a>
               </div>
@@ -1676,7 +1713,6 @@
         </div>
       </section>
 
-      <!-- Certifications Section -->
       <section id="certifications" class="h-full w-full p-8 sm:p-24">
         <h1
           class="my-10 text-center text-5xl font-bold text-galaxy border-y-2 border-purple-700 py-4"
@@ -1685,7 +1721,6 @@
         </h1>
 
         <div class="grid gap-x-10 gap-y-8 sm:grid-cols-2">
-          <!-- HTML & CSS -->
           <div
             class="card bg-base-100 rounded-lg shadow-lg hover:shadow-sm hover:scale-102 hover:transition-all hover:duration-300"
           >
@@ -1693,12 +1728,12 @@
               <img
                 src="images/certificates/html.jpg"
                 alt="image"
-                class="h-full object-cover"
+                class="h-full object-cover w-full"
               />
             </figure>
             <div class="card-body">
-              <h2 class="text-2xl text-white">HTML & CSS ITS</h2>
-              <p class="text-[16px] text-justify">
+              <h2 class="text-2xl text-white break-words">HTML & CSS ITS</h2>
+              <p class="text-[16px] text-justify break-words">
                 HTML and CSS certification is an industry-recognized credential
                 issued by Certiport (a Pearson VUE business). It validates
                 professional-level knowledge in front-end web development,
@@ -1717,7 +1752,6 @@
             </div>
           </div>
 
-          <!-- Database -->
           <div
             class="card bg-base-100 rounded-lg shadow-lg hover:shadow-sm hover:scale-102 hover:transition-all hover:duration-300"
           >
@@ -1725,12 +1759,12 @@
               <img
                 src="images/certificates/database.jpg"
                 alt="image"
-                class="h-full object-cover"
+                class="h-full object-cover w-full"
               />
             </figure>
             <div class="card-body">
-              <h2 class="text-2xl text-white">Database ITS</h2>
-              <p class="text-[16px] text-justify">
+              <h2 class="text-2xl text-white break-words">Database ITS</h2>
+              <p class="text-[16px] text-justify break-words">
                 Databases certification is an industry-recognized credential
                 issued by Certiport (a Pearson VUE business). It validates an
                 individual's fundamental knowledge of database design,
@@ -1749,7 +1783,6 @@
             </div>
           </div>
 
-          <!-- Honors -->
           <div
             class="card bg-base-100 rounded-lg shadow-lg hover:shadow-sm hover:scale-102 hover:transition-all hover:duration-300"
           >
@@ -1757,12 +1790,14 @@
               <img
                 src="images/certificates/honor.jpg"
                 alt="image"
-                class="h-full object-fill"
+                class="h-full object-fill w-full"
               />
             </figure>
             <div class="card-body">
-              <h2 class="text-2xl text-white">Academic Excellence</h2>
-              <p class="text-[16px] text-justify">
+              <h2 class="text-2xl text-white break-words">
+                Academic Excellence
+              </h2>
+              <p class="text-[16px] text-justify break-words">
                 This certificate was awarded by the University of Mindanao
                 (College of Computing Education) in recognition of exemplary
                 academic performance. It distinguishes you as a high-achieving
@@ -1782,19 +1817,20 @@
         </div>
       </section>
 
-      <!-- Footer Section -->
       <footer
-        class="w-full border-t-1 border-slate-800 bg-base-200/20 shadow-lg hover:shadow-md hover:shadow-purple-500/50 hover:transition-all hover:duration-300 px-24 py-14"
+        class="w-full border-t-1 border-slate-800 bg-base-200/20 shadow-lg hover:shadow-md hover:shadow-purple-500/50 hover:transition-all hover:duration-300 px-4 sm:px-24 py-14 overflow-x-hidden"
       >
-        <div class="grid gap-6 sm:grid-cols-12">
-          <div class="col-span-9">
-            <div class="flex gap-x-2 items-center">
+        <div class="grid gap-6 text-center sm:text-left sm:grid-cols-12">
+          <div class="sm:col-span-9 flex flex-col items-center sm:items-start">
+            <div
+              class="flex gap-x-2 items-center justify-center sm:justify-start"
+            >
               <img
                 src="images/bug.svg"
                 alt="logo"
                 class="w-[30px] h-[30px] text-galaxy rounded-full"
               />
-              <h1 class="text-2xl text-galaxy">John Ford Buliag</h1>
+              <h1 class="text-2xl text-galaxy break-words">John Ford Buliag</h1>
             </div>
 
             <div class="mt-2">
@@ -1802,10 +1838,13 @@
               <p class="text-lg text-slate-500 font-mono">OUTPUT IS IMPACT.</p>
             </div>
           </div>
-          <div class="col-span-3">
-            <h1 class="text-2xl">Connect With Me</h1>
 
-            <div class="grid grid-cols-4 gap-4 mt-4">
+          <div class="sm:col-span-3 flex flex-col items-center sm:items-start">
+            <h1 class="text-2xl break-words">Connect With Me</h1>
+
+            <div
+              class="grid grid-cols-4 gap-4 mt-4 place-items-center sm:place-items-start"
+            >
               <a
                 href="https://github.com/ZyroGlitch"
                 target="_blank"
