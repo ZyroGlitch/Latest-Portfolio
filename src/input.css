@@ -120,6 +120,8 @@
     .bg-galaxy {
         background-image: linear-gradient(to right, #928c93, #a279ad, #ae62c7, #b645e3, #ba00ff);
     }
+    
+
 
     h2{
         @apply text-4xl text-white;
@@ -159,6 +161,72 @@ html[data-theme="night"] #navbar[data-scrolled="true"] {
 
 
 @custom-variant night (&:where([data-theme=night], [data-theme=night] *));
+
+/* 🌞 Winter Theme Adjustments */
+html[data-theme="winter"] #home h1,
+html[data-theme="winter"] #home h2,
+html[data-theme="winter"] #home h6 {
+    @apply text-slate-700;
+}
+
+/* Section title borders in winter theme */
+html[data-theme="winter"] h1.border-y-2 {
+    @apply border-black;
+}
+
+/* Drawer close button visibility in winter theme */
+html[data-theme="winter"] #drawer-close {
+    @apply text-slate-700 hover:text-slate-900;
+}
+
+/* Experiences section text visibility in winter theme */
+html[data-theme="winter"] #experiences .text-white {
+    @apply text-slate-700;
+}
+
+/* Experiences timeline icons white in winter theme */
+html[data-theme="winter"] #experiences svg {
+    @apply text-white;
+}
+
+/* Certificate button styling in winter theme */
+html[data-theme="winter"] #experiences .btn svg {
+    @apply text-purple-800;
+}
+
+html[data-theme="winter"] #experiences .btn:hover svg {
+    @apply text-white;
+}
+
+/* Calendar icon visibility in winter theme */
+html[data-theme="winter"] #experiences .lucide-calendar-days-icon {
+    @apply text-slate-700;
+}
+
+/* Home CTA buttons in winter theme */
+html[data-theme="winter"] #home .btn {
+    @apply text-purple-800 bg-white ring-1 ring-purple-500 hover:ring-0 hover:bg-purple-500 hover:text-white hover:ring-purple-600 shadow-md;
+}
+
+/* About section visibility in winter theme */
+html[data-theme="winter"] #about .bg-base-200\/20 {
+    @apply bg-white shadow-md border border-gray-200;
+}
+
+html[data-theme="winter"] #about h6,
+html[data-theme="winter"] #about p,
+html[data-theme="winter"] #about span,
+html[data-theme="winter"] #about .text-white,
+html[data-theme="winter"] #about .text-gray-300,
+html[data-theme="winter"] #about .text-gray-400 {
+    @apply text-slate-700;
+}
+
+html[data-theme="winter"] #about svg {
+    @apply text-white;
+}
+
+
 
 /* Carousel Animation */
 .carousel-track {

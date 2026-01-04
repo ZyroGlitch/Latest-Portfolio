@@ -66,4 +66,60 @@ window.addEventListener("scroll", () => {
 });
 
 
-lucide.replace();
+lucide.createIcons();
+
+/* =========================
+   TYPING ANIMATION
+========================= */
+function startTyping() {
+  const typingEl = document.getElementById("typingText");
+  if (!typingEl) return;
+
+  const words = ["Aspiring Azure Data Engineer", "Aspiring Laravel Developer"];
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  const typeSpeed = 100;
+  const deleteSpeed = 50;
+  const pauseAfterType = 2000;
+  const pauseAfterDelete = 500;
+
+  function tick() {
+    const word = words[wordIndex];
+
+    if (!isDeleting) {
+      charIndex++;
+      typingEl.textContent = word.slice(0, charIndex);
+      if (charIndex === word.length) {
+        isDeleting = true;
+        setTimeout(tick, pauseAfterType);
+        return;
+      }
+      setTimeout(tick, typeSpeed);
+      return;
+    }
+
+    charIndex--;
+    typingEl.textContent = word.slice(0, charIndex);
+    if (charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      setTimeout(tick, pauseAfterDelete);
+      return;
+    }
+
+    setTimeout(tick, deleteSpeed);
+  }
+
+  tick();
+}
+
+// Start typing animation when DOM is ready
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", startTyping);
+} else {
+  startTyping();
+}
+

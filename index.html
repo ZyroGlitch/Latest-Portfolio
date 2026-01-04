@@ -57,11 +57,14 @@
               </div>
 
               <div class="sm:col-span-3 flex">
-                <a href="#home" class="btn btn-ghost text-xl text-galaxy p-0">
+                <a
+                  href="#home"
+                  class="flex items-center gap-2 text-xl text-galaxy font-semibold p-0"
+                >
                   <img
                     src="images/bug.svg"
                     alt="logo"
-                    class="hidden sm:block sm:mr-2"
+                    class="hidden sm:block sm:mr-2 text-galaxy"
                   />
                   My Portfolio
                 </a>
@@ -194,19 +197,23 @@
           JOHN FORD BULIAG
         </h1>
 
-        <h2
+        <h6
           class="text-galaxy mt-2 text-[clamp(1.1rem,4.5vw,1.875rem)] leading-snug break-words"
         >
-          Aspiring Azure Data Engineer
-        </h2>
+          <span id="typingText"></span
+          ><span
+            class="inline-block w-[0.08em] animate-pulse text-purple-500 ml-2"
+            >|</span
+          >
+        </h6>
 
         <div class="mt-2 w-full">
           <hr
             class="mx-auto my-6 h-0.5 w-full max-w-[300px] border-0 bg-slate-600"
           />
-          <h6 class="text-galaxy text-[clamp(1rem,4vw,1.5rem)]">
+          <h2 class="text-galaxy text-[clamp(1rem,4vw,1.5rem)]">
             Connect with me
-          </h6>
+          </h2>
         </div>
 
         <div
@@ -614,7 +621,6 @@
       </section>
 
       <!-- About Section -->
-      <!-- About Section -->
       <section
         id="about"
         class="h-full w-full px-4 py-10 sm:px-24 sm:py-24 overflow-x-hidden"
@@ -810,6 +816,7 @@
         </div>
       </section>
 
+      <!-- Experiences Section -->
       <section id="experiences" class="h-full w-full p-8 sm:p-24">
         <h1
           class="my-10 text-center text-5xl font-bold text-galaxy border-y-2 border-purple-700 py-4"
@@ -1106,6 +1113,7 @@
         </div>
       </section>
 
+      <!-- Projects Section -->
       <section id="projects" class="h-full w-full p-8 sm:p-24">
         <h1
           class="my-10 text-center text-5xl font-bold text-galaxy border-y-2 border-purple-700 py-4"
@@ -1713,6 +1721,7 @@
         </div>
       </section>
 
+      <!-- Certifications Section -->
       <section id="certifications" class="h-full w-full p-8 sm:p-24">
         <h1
           class="my-10 text-center text-5xl font-bold text-galaxy border-y-2 border-purple-700 py-4"
