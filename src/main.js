@@ -75,7 +75,7 @@ function startTyping() {
   const typingEl = document.getElementById("typingText");
   if (!typingEl) return;
 
-  const words = ["Aspiring Azure Data Engineer", "Aspiring Laravel Developer"];
+  const words = ["Aspiring Web Developer", "Aspiring Azure Data Engineer"];
 
   let wordIndex = 0;
   let charIndex = 0;
